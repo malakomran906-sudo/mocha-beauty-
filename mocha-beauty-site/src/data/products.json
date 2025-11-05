@@ -1,6 +1,6 @@
 [
   {"id":1,"name":"Mocha Velvet Lipstick — Cocoa Rose","price":24.00,"description":"Creamy, long-lasting lipstick with a mocha-coral finish. Smooth, hydrating formula with rich pigment.","image":"assets/lop.avif","image_webp":"assets/lop.webp","image_thumb":"assets/lop-thumb.jpg","category":"lips"},
-  {"id":2,"name":"Sunlit Glow Highlighter — Golden Mocha","price":28.00,"description":"Warm-gold highlighter that gives a subtle, buildable glow.","image":"https://via.placeholder.com/600x400/f2b07f/fff?text=Highlighter","category":"face"},
-  {"id":3,"name":"Neutral Eyeshadow Quad — Mocha Bloom","price":34.00,"description":"Four versatile shades for day-to-night looks.","image":"https://via.placeholder.com/600x400/6b4f48/fff?text=Eyeshadow","category":"eyes"},
-  {"id":4,"name":"Blending Brush — Luxe","price":18.00,"description":"Soft, cruelty-free brush for seamless blending.","image":"https://via.placeholder.com/600x400/9b7b6b/fff?text=Brush","category":"tools"}
+  {"id":2,"name":"Sunlit Glow Highlighter — Golden Mocha","price":28.00,"description":"Warm-gold highlighter that gives a subtle, buildable glow.","image":"assets/gold.avif","image_webp":"assets/gold.webp","image_thumb":"assets/gold-thumb.jpg","category":"face"},
+  {"id":3,"name":"Neutral Eyeshadow Quad — Mocha Bloom","price":34.00,"description":"Four versatile shades for day-to-night looks.","image":"assets/eys.avif","image_webp":"assets/eys.webp","image_thumb":"assets/eys-thumb.jpg","category":"eyes"},
+  {"id":4,"name":"Blending Brush — Luxe","price":18.00,"description":"Soft, cruelty-free brush for seamless blending.","image":"assets/brach.avif","image_webp":"assets/brach.webp","image_thumb":"assets/brach-thumb.jpg","category":"tools"}
 ]
