@@ -16,6 +16,8 @@ async function loadProducts(){
   }
 }
 
+function capitalize(s){ return (s && s.length) ? (s.charAt(0).toUpperCase()+s.slice(1)) : s }
+
 function initFilters(products){
   const categories = Array.from(new Set(products.map(p=>p.category).filter(Boolean)));
   const sel = document.getElementById('category-filter');
@@ -54,14 +56,25 @@ function renderProducts(products){
     node.querySelector('.product-price').textContent = `$${p.price.toFixed(2)}`;
     const media = node.querySelector('.product-media');
     if(p.image){
+      const picture = document.createElement('picture');
+      if(p.image_webp){
+        const srcWebp = document.createElement('source');
+        srcWebp.type = 'image/webp';
+        srcWebp.srcset = p.image_webp;
+        picture.appendChild(srcWebp);
+      }
       const img = document.createElement('img');
-      img.src = p.image;
+      img.src = p.image_thumb || p.image;
+      img.dataset.full = p.image;
       img.alt = p.name;
+      img.loading = 'lazy';
+      img.decoding = 'async';
       img.style.maxWidth = '100%';
       img.style.height = '100%';
       img.style.objectFit = 'cover';
+      picture.appendChild(img);
       media.innerHTML = '';
-      media.appendChild(img);
+      media.appendChild(picture);
     }
     node.querySelector('.product-view').addEventListener('click', ()=>openProductModal(p));
     grid.appendChild(node);
@@ -88,7 +101,20 @@ function openProductModal(p){
   const modal = document.getElementById('product-modal');
   const panel = modal.querySelector('.modal-panel');
   const content = modal.querySelector('.modal-content');
-  content.innerHTML = `\n+    <h3>${escapeHtml(p.name)}</h3>\n+    <p class=\"muted\">${escapeHtml(p.category || '')} — <strong>$${p.price.toFixed(2)}</strong></p>\n+    <div class=\"modal-media\">${p.image?`<img src=\"${p.image}\" alt=\"${escapeAttr(p.name)}\">`:'<div style="height:180px;background:var(--neutral-300);border-radius:8px"></div>'}</div>\n+    <p style=\"margin-top:12px\">${escapeHtml(p.description)}</p>\n+    `;
+  // build modal HTML using <picture> for better format support
+  let html = `<h3>${escapeHtml(p.name)}</h3>`;
+  html += `<p class="muted">${escapeHtml(p.category || '')} — <strong>$${p.price.toFixed(2)}</strong></p>`;
+  if(p.image){
+    let pic = '<picture>';
+    if(p.image_webp) pic += `<source type="image/webp" srcset="${p.image_webp}">`;
+    pic += `<img src="${p.image}" alt="${escapeAttr(p.name)}" style="max-width:100%;border-radius:8px">`;
+    pic += '</picture>';
+    html += `<div class="modal-media">${pic}</div>`;
+  } else {
+    html += '<div class="modal-media" style="height:180px;background:var(--neutral-300);border-radius:8px"></div>';
+  }
+  html += `<p style="margin-top:12px">${escapeHtml(p.description)}</p>`;
+  content.innerHTML = html;
   modal.setAttribute('aria-hidden','false');
   // show and trap focus
   lastFocused = document.activeElement;
