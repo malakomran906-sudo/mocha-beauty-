@@ -144,3 +144,31 @@ let lastFocused = null;
 
 // init
 loadProducts();
+
+// render assets gallery (images placed in `src/assets`)
+async function loadAssetsGallery(){
+  try{
+    const res = await fetch('data/assets.json');
+    const assets = await res.json();
+    const gallery = document.getElementById('assets-gallery');
+    if(!gallery) return;
+    assets.forEach(src=>{
+      const card = document.createElement('article');
+      card.className = 'product-card';
+      const media = document.createElement('div');
+      media.className = 'product-media';
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = src.split('/').pop();
+      img.loading = 'lazy';
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'cover';
+      media.appendChild(img);
+      card.appendChild(media);
+      gallery.appendChild(card);
+    });
+  }catch(e){ console.error('Failed to load assets.json', e); }
+}
+
+loadAssetsGallery();
