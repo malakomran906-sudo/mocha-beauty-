@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einföld kynningarsíða</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="logo">Mocha Beauty</h1>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Opna valmynd">☰</button>
+            <nav id="main-nav" class="main-nav">
+                <a href="#about">Um</a>
+                <a href="#services">Þjónusta</a>
+                <a href="#contact">Hafa samband</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Falleg og einföld vefsíða með HTML, CSS og JavaScript</h2>
+                <p>Þetta er lítill dæmismynd af kynningarsíðu. Hægt er að breyta efni eða útliti auðveldlega.</p>
+                <a href="#contact" class="btn">Hafa samband</a>
+            </div>
+        </section>
+
+        <section id="about" class="container about">
+            <h3>Um okkur</h3>
+            <p>Við bjóðum einfaldar, snyrtilegar og hraðar vefsíður sem ganga vel á öllum tækjum.</p>
+        </section>
+
+        <section id="services" class="container features">
+            <h3>Þjónusta</h3>
+            <div class="cards">
+                <article class="card">
+                    <h4>Hönnun</h4>
+                    <p>Útlit sem dregur athygli að þínu vörumerki.</p>
+                </article>
+                <article class="card">
+                    <h4>Framþróun</h4>
+                    <p>Við byggjum hraðar og aðgengilegar síður með hreinum kóða.</p>
+                </article>
+                <article class="card">
+                    <h4>Viðhald</h4>
+                    <p>Uppfærslur og stuðningur eftir þörfum.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="container contact">
+            <h3>Hafa samband</h3>
+            <form id="contact-form">
+                <label for="name">Nafn</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Netfang</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Skilaboð</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit" class="btn">Senda</button>
+                <p id="form-status" class="form-status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Mocha Beauty — Einföld kynningarsíða</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

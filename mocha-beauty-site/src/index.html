@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mocha Beauty — Premium Makeup</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">Mocha Beauty</h1>
+      <nav class="nav">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h2>Premium makeup with warm mocha tones and vibrant pops</h2>
+          <p>Discover curated collections that blend subtle sophistication with bright, wearable color.</p>
+          <a class="btn-primary" href="#products">Shop collections</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <!-- decorative gradient block -->
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="container products-section">
+      <h3 class="section-title">Featured Products</h3>
+
+      <div class="controls">
+        <label class="control-item">
+          <span class="sr-only">Search products</span>
+          <input id="search" type="search" placeholder="Search products, e.g. 'mocha'" />
+        </label>
+
+        <label class="control-item">
+          <span class="sr-only">Filter by category</span>
+          <select id="category-filter">
+            <option value="">All categories</option>
+          </select>
+        </label>
+
+        <label class="control-item range">
+          <span class="sr-only">Maximum price</span>
+          <input id="max-price" type="range" min="0" max="100" value="100" />
+          <output id="max-price-val">$100</output>
+        </label>
+
+        <button id="clear-filters" class="btn-outline">Clear</button>
+      </div>
+
+      <div id="product-grid" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="about" class="container about-section">
+      <h3 class="section-title">About Mocha Beauty</h3>
+      <p>Mocha Beauty crafts premium cosmetics inspired by warm earth tones with modern, vibrant accents. Clean ingredients, luxurious textures.</p>
+    </section>
+
+    <section id="contact" class="container contact-section">
+      <h3 class="section-title">Contact</h3>
+      <p>Have questions? Email us at <a href="mailto:hello@mochabeauty.example">hello@mochabeauty.example</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; Mocha Beauty — All rights reserved</small>
+    </div>
+  </footer>
+
+  <template id="product-card-template">
+    <article class="product-card">
+      <div class="product-media"></div>
+      <div class="product-body">
+        <h4 class="product-title"></h4>
+        <p class="product-price"></p>
+        <button class="btn-outline product-view">View</button>
+      </div>
+    </article>
+  </template>
+
+  <div id="product-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div class="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
