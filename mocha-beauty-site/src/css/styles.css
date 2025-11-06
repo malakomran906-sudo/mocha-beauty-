@@ -26,7 +26,6 @@ body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .product-card{background:white;border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 18px rgba(51,40,38,0.06);display:flex;flex-direction:column}
 .product-media{height:200px;aspect-ratio:16/9;background:linear-gradient(135deg,var(--neutral-300),#fff);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.product-media::after{content:"";width:70%;height:70%;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));border-radius:10px;opacity:0.12}
 
 /* Ensure images/pictures fill the media area and crop cleanly */
 .product-media img,
